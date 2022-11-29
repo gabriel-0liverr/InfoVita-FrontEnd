@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsSearch } from 'react-icons/bs';
+import { AiOutlineReload } from 'react-icons/ai';
 
 import './equipamentos.css';
+
+import { carregarEquips, showAdd, hideAdd, showEdit, hideEdit } from './equip-functions';
+
 
 function Equipamentos() {
     return(
@@ -14,45 +19,48 @@ function Equipamentos() {
                     </Link>
                 </div>
                 
-                <section className="equipList">
+                <section className="middle">
                     <div className="search">
                         <input placeholder="Digite o equipamento"/>
-                        <button>Search</button>
+                        <button> <BsSearch /> </button>
+                        <button onClick={carregarEquips}> <AiOutlineReload /> </button>
                     </div>
 
                     <hr />
-                    <button id="adicionarEquip"> Adicionar Equipamento</button>
+                        <button id="mostrarAdd" onClick={showAdd}>Adicionar Equipamento</button>
+
+                        <form id="form-add">
+                            <input id="addNome" placeholder="Nome do Equipamento"></input>
+                            <input id="addExames" placeholder="Exames"></input>
+                            <button id="adicionarAdd">Adicionar</button>
+                            <button id="cancelarAdd" onClick={hideAdd}>Cancelar</button>
+                        </form>
                     <hr />
                     
-                    <li>
-                        <ul className="equip">item</ul>
-                        <ul className="equip">item</ul>
-                        <ul className="equip">item</ul>
-                        <ul className="equip">item</ul>
-                        <ul className="equip">item</ul>
-                        <ul className="equip">item</ul>
-                        <ul className="equip">item</ul>
+                    <li id="li-equipamentos">
                     </li>
                 </section>
 
-                <section className="equipData">
+                <section className="right">
                     <h2 className="equipDado" id="equipNome">Nome do Equipamento</h2>
                     <hr />
                     
                     <li id="li-dados">
-                        <ul className="equipDado"  id="equipId">Identificador</ul>
+                        <ul className="equipDado"  id="equipId">Dado do Equipamento</ul>
+                        <ul className="equipDado"  >Dado do Equipamento</ul>
                     </li>
 
-                    <form id="form-edicao">
-                        <input id="equipNome" placeholder="Nome do Equipamento"></input>
-                        <button id="editarEquip">Salvar Alterações</button>
-                        <button id="cancelarEdit">Cancelar</button>
+                    <form id="form-editar">
+                        <input id="editNome" placeholder="Nome do Equipamento"></input>
+                        <input id="editExames" placeholder="Exames"></input>
+                        <button id="salvarEdit">Salvar Alterações</button>
+                        <button id="cancelarEdit" onClick={hideEdit}>Cancelar</button>
                     </form>
 
                     <hr />
 
                     <p>Para editar o Equipamento selecionado...</p>
-                    <button id="editar">Editar</button>
+                    <button id="mostrarEdit" onClick={showEdit}>Editar</button>
 
                     <hr />
                     <p>Caso queira remover o Equipamento selecionado...</p>

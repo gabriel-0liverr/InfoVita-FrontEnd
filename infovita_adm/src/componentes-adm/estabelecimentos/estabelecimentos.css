@@ -18,7 +18,7 @@ div.left{
 
 /* Seções */
 section.middle, section.right{
-    min-width: 33%;
+    min-width: 30%;
     border-left: 1px solid gray;
     padding: 50px;
 
@@ -30,23 +30,26 @@ section.middle li, section.right li{
     list-style-type: none;
 }
 
-/* Lista de Equipamentos */
+/* Lista de Estabelecimentos */
 section.middle li ul{
     padding: 5px;
     border: 1px solid black;
+}
+section.middle button#mostrarAdd{
+    display: grid;
 }
 section.middle form#form-add{
     display: none;
 }
 
-/* Dados de Equipamentos */
+/* Dados de Estabelecimentos */
 section.right li ul{
     padding: 0px;
 }
-section.right form#form-editar{
-    display: grid;/*---> Esse muda de 'none' para 'grid', e vice-versa*/
+section.right form#form-edit{
+    display: none;/*---> Esse muda de 'none' para 'grid', e vice-versa*/
     grid-template-columns: 250px;
 }
-section.right form#form-editar input, section.right form#form-editar button{
+section.right form#form-edit input, section.right form#form-edit button{
     margin-bottom: 10px;
 }

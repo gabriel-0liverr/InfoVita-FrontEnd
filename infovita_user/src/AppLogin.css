@@ -1,8 +1,8 @@
 div.login{
     justify-content: center;
     text-align: center;
-    padding-top: 170px;
-    padding-bottom: 170px;
+    padding-top: 190px;
+    padding-bottom: 190px;
 }
 
 div.login button.btn-login{
@@ -13,12 +13,4 @@ div.login button.btn-login{
 }
 div.login button.btn-login:hover{
     background-color: gray;
-}
-
-div form.login{
-    display: grid;
-    justify-content: center;
-}
-div form.login input{
-    width: 250px;
 }

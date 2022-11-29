@@ -5,7 +5,7 @@ import useAuth from '../hooks/useAuth';
 import Login from '../AppLogin';
 import Home from '../componentes-adm/home/home'
 import Equipamentos from '../componentes-adm/equipamentos/equipamentos';
-
+import Estabelecimentos from '../componentes-adm/estabelecimentos/estabelecimentos';
 
 const Private = ({ Item }) => {
     const { signed } = useAuth();
@@ -18,6 +18,7 @@ export default function RotasAdm() {
             <Route path="/" element={<Login/>}/>
             <Route path="/home" element={<Private Item={Home}/>}/>
             <Route path="/equipamentos" element={<Equipamentos/>}/>
+            <Route path="/estabelecimentos" element={<Estabelecimentos/>}/>
         </Routes>
     )
 }
