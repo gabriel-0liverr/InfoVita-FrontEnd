@@ -2,6 +2,7 @@ import React from "react";
 import './perfil.css';
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import { Button } from "reactstrap";
 
 function Perfil() {
     const { user } = useAuth();
@@ -23,7 +24,7 @@ function Perfil() {
                 <p>Email: {user.email}</p>
             </div>
 
-            <button className="btn-logout" onClick={sair}>Sair da Conta</button>
+            <Button onClick={sair}>Sair da Conta</Button>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
+import { Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import useAuth from "./hooks/useAuth";
 
@@ -20,20 +21,20 @@ function Login() {
                 <br />
 
                 <h4>Faça o login</h4>
-                <button className="btn-login">
-                <GoogleLogin
-                    onSuccess={credentialResponse => {
-                        const token = (jwt_decode(credentialResponse.credential));
+                <Button className="primary">
+                    <GoogleLogin
+                        onSuccess={credentialResponse => {
+                            const token = (jwt_decode(credentialResponse.credential));
 
-                        navigate('/home');
+                            navigate('/home');
 
-                        signin(token.name, token.email, token.picture);
-                    }}
-                    onError={() => {
-                        console.log('Login Failed');
-                    }}
-                />
-                </button>
+                            signin(token.name, token.email, token.picture);
+                        }}
+                        onError={() => {
+                            console.log('Login Failed');
+                        }}
+                    />
+                </Button>
             </div>
         </>
     );

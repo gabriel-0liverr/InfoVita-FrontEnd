@@ -1,18 +1,66 @@
-div.home{
-    justify-content: center;
-    text-align: center;
-    padding-top: 210px;
-    padding-bottom: 210px;
+div.body{
+    display: flex;
+    justify-content: space-around;
 }
 
-div.home div.search{
-    display: flex;
+/* Seções */
+section.left, section.right{
+    padding: 50px;
+    height:630px;
+}
+
+section.left{
+    width: 100%;
     justify-content: center;
     text-align: center;
+    overflow:auto;
+    overflow-x:hidden;
 }
-div.home div.search Input{
+section.right{
+    display: none;
+    min-width: 65%;
+    border-left: 1px solid gray;
+    overflow:auto;
+    overflow-x:hidden;
+}
+
+section.left div.search{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+section.left div.search Input{
     max-width: 300px;
 }
-div.home div.search Input, div.home div.search Button{
+section.left div.search Input, section.left div.search Button{
     margin-right: 5px;
+}
+
+section.left li{
+    border-top: 1px solid gray;
+    padding-top: 20px;
+    max-width: 380px;
+    margin: auto;
+}
+section.left li ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+section.left li ul:hover{
+    background-color: #adf;
+}
+section.left li ul p{
+    margin: 0;
+}
+
+section.left li, section.right li{
+    list-style-type: none;
+}
+section.right li ul{
+    padding: 0px;
 }

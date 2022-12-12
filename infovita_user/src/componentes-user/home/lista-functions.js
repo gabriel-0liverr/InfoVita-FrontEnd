@@ -29,17 +29,23 @@ function carregarEstabs(){
             let nomeNovo = document.createElement('p');
             nomeNovo.textContent = estabelecimentos[contador]['nome'];
             divNova.appendChild(nomeNovo);
-            //Checkbox
-            let checkNovo = document.createElement('button');
-            checkNovo.className = 'btn btn-primary';
-            checkNovo.textContent = 'Ver';
+
             //Abrindo Dados
-            checkNovo.addEventListener('click', () => {
+            divNova.addEventListener('click', () => {
+                let titulo = document.getElementById('titulo');
+                titulo.style.display = 'none';
+                let subtitulo = document.getElementById('subtitulo');
+                subtitulo.style.display = 'none';
+
+
+                let section_right = document.getElementById('right');
+                section_right.style.display = 'grid';
+
                 let campo_mapa = document.getElementById('estabMapa');
 
                 campo_mapa.style.display = 'grid';
-                campo_mapa.style.width = '550px';
-                campo_mapa.style.height = '250px';
+                campo_mapa.style.width = '800px';
+                campo_mapa.style.height = '350px';
                 campo_mapa.style.border = '1px solid black';
                 campo_mapa.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyClbblqk2CYFLoyDNB-lgqvMcPGvrFc0bM&q=place_id:' + estabelecimentos[contador]['local'];
                 console.log(campo_mapa.src);
@@ -64,7 +70,6 @@ function carregarEstabs(){
                 campo_id.textContent = "ID: " + estabelecimentos[contador]['id'];
                 campo_local.textContent = "Local: " + estabelecimentos[contador]['local'];
             })
-            divNova.appendChild(checkNovo);
             
             //let divForm = document.getElementById("footerEstab");
             document.getElementById('li-estabelecimentos').appendChild(divNova);
